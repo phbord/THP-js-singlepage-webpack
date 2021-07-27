@@ -18,7 +18,7 @@ const PageList = (argument = "") => {
                 cache: 'default'
             };
             if (argument) {
-                finalURL = `${url}?key=${apiKey}&search=${argument}&page_size=10&search_exact=true`;
+                finalURL = `${url}&search=${argument}&page_size=10&search_exact=true`;
             }
             fetch(`${finalURL}`, options)
                 .then(response => response.json())
@@ -35,7 +35,7 @@ const PageList = (argument = "") => {
                 });
         };
 
-        fetchList("https://api.rawg.io/api/games", cleanedArgument);
+        fetchList(`https://api.rawg.io/api/games?key=${apiKey}`, cleanedArgument);
     };
 
     const render = () => {
