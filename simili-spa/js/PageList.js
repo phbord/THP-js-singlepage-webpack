@@ -7,20 +7,10 @@ const PageList = (argument = "") => {
 
         const fetchList = (url, argument) => {
             let finalURL = url;
-            const options = {
-                method: 'GET',
-                headers: new Headers(),
-                // headers: {
-                //     'Content-Type': 'application/json',
-                //     'API-Key': apiKey
-                // },
-                mode: 'cors',
-                cache: 'default'
-            };
             if (argument) {
                 finalURL = `${url}&search=${argument}&page_size=10&search_exact=true`;
             }
-            fetch(`${finalURL}`, options)
+            fetch(`${finalURL}`)
                 .then(response => response.json())
                 .then(response => {
                     response.results.forEach(article => {
