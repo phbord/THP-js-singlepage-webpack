@@ -1,0 +1,35 @@
+input[type="text"],.magnifier {
+    &,&:focus {
+        height: 2rem;
+        border: 1px solid $border-grey;
+        border-left: 0;
+        border-radius: 50%;
+        background-color: $dark;
+        color: $grey-text;
+        font-size: .9rem;
+    }
+}
+#basic-url {
+    padding-left: .5rem;
+    @include search-design(12rem, left, 0, 1rem);
+}
+.magnifier {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @include search-design(2rem, right, 0, 1rem);
+}
+.input-group-text svg magnifier {
+    height: 1.2rem;
+    fill: $light;
+}
+
+select {
+    width: 15rem;
+    @include btn-design;
+}
+
+.btn-default {
+    @include btn-design;
+    font-weight: bold;
+}

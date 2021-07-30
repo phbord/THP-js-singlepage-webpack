@@ -1,0 +1,27 @@
+@mixin btn-design {
+    padding: .75rem 2rem;
+    border: 0;
+    background-color: $red;
+    color: $light;
+    font-size: 1.2rem;
+}
+
+@mixin search-design($w, $bd, $bdval, $brval) {
+    width: $w !important;
+    @if $bd == left {
+        border-left: $bdval;
+        border-radius: 0 $brval $brval 0;
+    }
+    @if $bd == right {
+        border-right: $bdval;
+        border-radius: $brval 0 0 $brval;
+    }
+}
+
+@mixin transition($ms) {
+    -webkit-transition: all $ms ease;
+	-moz-transition: all $ms ease;
+	-ms-transition: all $ms ease;
+	-o-transition: all $ms ease;
+	transition: all $ms ease;
+}

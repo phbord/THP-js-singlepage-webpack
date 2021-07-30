@@ -1,0 +1,71 @@
+body {
+    background-color: $dark;
+    color: $light;
+    font-family: $font;
+    font-size: 62.5%;
+}
+
+a,a:visited {
+	text-decoration: none;
+	position: relative;
+	color: $light;
+	@include transition(200ms);
+
+	&:after {
+		content: '';
+		height: 3px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		background-color: $light;
+		@include transition(200ms);
+	}
+
+	&:hover {
+		color: $light;
+	}
+
+	&:hover:after {
+		width: 100%;
+	}
+
+	&.block {
+		display: block;
+		padding: .5em;
+
+		&:hover {
+			background-color: $light;
+		}
+	}
+}
+
+ul,li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.opacity-1,.opacity-0 {
+	@include transition(350ms);
+}
+.opacity-1 {
+	opacity: 1 !important;
+}
+.opacity-0 {
+	opacity: 0 !important;
+}
+
+.h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+.h2 {
+	color: $red;
+    font-size: 1.8rem;
+    font-weight: bold;
+	text-transform: uppercase;
+}
+.welcome-content {
+    font-size: .85rem;
+}
